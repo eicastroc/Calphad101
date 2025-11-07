@@ -1,0 +1,58 @@
+new YES
+
+@$**********************************************************************
+@$ Get thermodynamic data
+@$**********************************************************************
+read TDB ./AlSi98
+
+
+@$**********************************************************************
+@$ calculation of binary phase diagram
+@$**********************************************************************
+
+@$*********************************************************
+@$ set initial conditions and calculate initial equilibrium
+
+set condition t=1000
+set condition p=1e5
+set condition n=1.0
+set condition x(si)=0.1
+
+list conditions
+
+calculate equilibrium
+
+list results
+1
+
+
+@$***********************************************
+@$ mapping calculation (to get the phase diagram) 
+
+set axis
+1
+x(si)
+0
+1
+0.025
+
+set axis
+2
+t
+600
+1800
+30
+
+map 
+
+@$*******************************************************
+@$ post-processing operations (graphing)
+
+plot
+X(*,SI)
+T_C
+SCALE_RANGES X N 0 1
+SCALE_RANGES Y N 300 1500
+RENDER
+
+set inter

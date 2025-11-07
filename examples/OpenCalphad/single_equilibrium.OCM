@@ -1,0 +1,41 @@
+new YES
+
+@$**********************************************************************
+@$ Get thermodynamic data
+@$**********************************************************************
+read TDB ./AlSi98
+Al Si
+
+enter symbol
+cp
+H.T;
+
+
+
+@$**********************************************************************
+@$ calculation of single equilibrium
+@$**********************************************************************
+
+@$*********************************************************
+@$ set initial conditions and calculate initial equilibrium
+set condition t=500
+set condition p=1e5
+set condition n=1.0
+set condition x(si)=0.1
+
+list conditions
+
+
+calculate equilibrium
+list results
+1
+
+show H
+show cp
+
+
+
+
+set interactive
+
+exit Y

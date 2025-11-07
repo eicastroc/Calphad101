@@ -1,0 +1,114 @@
+@@ Log file generated 2025-10-22
+ @@ Aluminum silicon binary system
+
+ 
+@@**********************************************************************
+@@ Get thermodynamic data
+@@**********************************************************************
+go database
+switch
+USER
+define-system
+Al Si
+get
+
+
+
+@@**********************************************************************
+@@ poly_3 is the module for thermodynamic equilibrium calculations
+@@**********************************************************************
+goto_module poly_3
+ 
+ 
+
+@@**********************************************************************
+@@ calculation of mixing enthalpy
+@@**********************************************************************
+
+
+
+@@*********************************************************
+@@ set initial conditions and calculate initial equilibrium
+
+set_reference_state Al LIQUID * 1e5
+set_reference_state Si LIQUID * 1e5
+
+set-condition t=1100.15
+set_condition p=1e5
+set_condition n=1.0
+set_condition x(si)=0.1
+
+list-conditions
+ 
+compute-equilibrium
+
+list-equilibrium
+SCREEN
+vwns
+
+
+
+@@***********************************************
+@@ step calculation (to get graph of X(Si) vs Hmix) 
+
+set_axis_variable
+1
+x(si)
+0
+1
+0.025
+
+step
+NORMAL
+
+
+@@**************************************************
+@@ do step calculation at other temperatures
+
+set-condition t=1253.15
+step
+NORMAL
+
+set-condition t=1696.15
+step
+NORMAL
+
+@@*******************************************************
+@@ post-processing operations (graphing)
+
+post
+
+select_plot 1
+
+
+set_diagram_axis 
+x
+mole-fraction
+si
+
+set_diagram_axis
+y
+mur(Al)
+
+
+set-scaling-status
+x
+n
+0
+1
+
+
+set-scaling-status
+y
+n
+-10000
+0
+
+
+append_experimental_data y chemicalPot_Al 1:1
+
+plot
+
+set_interactive
+
+exit

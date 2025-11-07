@@ -1,0 +1,509 @@
+$
+$ Binary phase diagram data in Al-Si system
+$
+ PROLOG 1
+ XSCALE 0 1
+ YSCALE 300 1500
+ XSCALE LINEAR
+ YSCALE LINEAR
+ XLENGTH 11.5
+ YLENGTH 11.5
+ TITLE
+ XTEXT Mole fraction Si
+ YTEXT Temperature [°C]
+
+
+$
+$***********************************************************************
+DATASET 1 Experimental Al-Si Liquidus Data
+$***********************************************************************
+$
+ATTRIBUTE CENTER
+CHARSIZE .3
+SYMBOLSIZE .3
+$
+CLIP OFF
+color 1
+0.5 .975  MANS200' Compilation - Murray 1984
+0.05 .975 MANS1' Thermal analysis - Matsuyama 1934
+0.05 .95 MANS2' Thermal analysis - Singer 1947
+0.05 .925 MANS3' Thermal analysis - Craighead 1955
+0.05 .9 MANS4' Electrochemical cell - Berthon 1969
+0.05 .875 MANS5' DTA (45 K/min) - Kobayashi 1976
+CLIP ON
+
+
+
+$  K. Matsuyama,  
+$  "Ternary  Diagram  of A1-Cu-Si System", 
+$  Kinzoku No Kenkyu, 11,461-490 (1934).
+$
+$ X(Si) vs T_C (Liquidus)
+color 1
+BLOCK X=C1; Y=C2; GOC=C3,MAWS5;
+.077    605
+.145    620
+.194    684
+.292    802
+.39     915
+.49     1005
+.59     1107
+.692    1200
+.794    1272
+.896    1367
+BLOCKEND
+
+
+
+$  A. R.E. Singer and S.A. Cottrell, 
+$  "Properties of the Aluminum-Silicon Alloys 
+$  at Temperatures in the Region of the Solidus", 
+$  J. Inst. Met., 73, 33-54 (1947) 
+$
+$ X(Si) vs T_C (Liquidus)
+color 1
+BLOCK X=C1; Y=C2; GOC=C3,MAWS2;
+.078    608
+.0394   635
+.0144   651
+.0144   652
+.0093   654
+.0052   655
+BLOCKEND
+$
+$ X(Si) vs T_C (eutectic)
+color 2
+BLOCK X=C1; Y=C2; GOC=C3,MAWS2;
+.0742   574
+.0375   575
+.0201   577
+BLOCKEND
+
+
+
+$  C.M. Craighead, E.W. Cawthorne, and R.I. Jaffee, 
+$  "Solution Rate of Solid Aluminum in Molten AI-Si Alloy", 
+$  Trans. AIME, 203, 81-87 (1955).
+$
+$ X(Si) vs T_C (Liquidus)
+color 1
+BLOCK X=C1; Y=C2; GOC=C3,MAWS3;
+.1323   598
+.1226   581
+.1179   578
+.1079   584
+.0771   610
+.0472   630
+BLOCKEND
+$
+$ X(Si) vs T_C (eutectic)
+color 2
+BLOCK X=C1; Y=C2; GOC=C3,MAWS3;
+.1323   578
+.1226   578
+.1179   576
+.1079   576
+.0771    578
+.0472    577
+BLOCKEND
+
+
+
+$  O. Berthon, G. Petot-Ervas, C. Petot, and P. Desre, 
+$  "Thermodynamics of AI-Si Alloys Containing from 2 to 35 at.% Si", 
+$  C. R. Acad. Sei. Paris, 268, C1939-C1942 (1969).
+$
+$ X(Si) vs T_C (Liquidus)
+color 1
+BLOCK X=C1; Y=C2; GOC=C3,MAWS4;
+.351    887
+.291    802
+.262    766
+.242    742
+.213    709
+.193    682
+.164    632
+.145    602
+.116    580
+.096    598
+.068    617
+.048    628
+.02     642
+BLOCKEND
+
+
+
+$  K. Kobayashi, R. H. Shingu, H. Kanbara, and R. Ozaki, 
+$  "The Role of the Primary Phase on Eutectic Solidification 
+$   of Al-Si Alloys", 
+$  Trans. Jpn. Inst.  Met.,  17,  545-550 (1976).
+$
+$ X(Si) vs T_C (Liquidus)
+color 1
+BLOCK X=C1; Y=C2; GOC=C3,MAWS5;
+.194    700
+BLOCKEND
+
+
+$  K. Kobayashi,  R.H.  Shingu,  and  R.  Ozaki, 
+$  "Shift of Aluminium Liquidus in A1-Si System 
+$   Due to the Sodium Addition",
+$  Scr.  Metall.,  10, 525-527 (1976).
+$
+$ X(Si) vs T_C (Liquidus)
+color 1
+BLOCK X=C1; Y=C2; GOC=C3,MAWS5;
+.058    621
+.077    605.5
+.096    588
+BLOCKEND
+
+
+
+$  J.L. Murray and A.J. McAlister,
+$  "The Al-Si (Aluminum-Silicon) System:,
+$  Bulletin of Alloy Phase Diagrams, 5(1), 74-84 (1984).
+color 1
+$
+$ X(Si) vs T_C (Eutectic)
+BLOCK X=C1; Y=C2; GOC=C3,MAWS200;
+.015    577
+.122    577
+1.0     577
+BLOCKEND
+$
+$ X(Si) vs T_C (Melting pure Al an pure Si)
+BLOCK X=C1; Y=C2; GOC=C3,MAWS200;
+0.0     660.452
+1.0     1414
+BLOCKEND
+
+
+$
+$***********************************************************************
+DATASET 2 Experimental Al-Si Al-Solvus data
+$***********************************************************************
+$
+ATTRIBUTE CENTER
+CHARSIZE .3
+SYMBOLSIZE .3
+$
+CLIP OFF
+color 4
+0.05 .85 MANS6' Optical metallography - Gwyer 1928
+0.05 .825 MANS7' Optical metallography - Dix 1928
+0.05 .8 MANS8' Dilatometry, hardness - Losana 1931
+0.05 .775 MANS9' Thermoelectric measurements - Durer 1940
+0.05 .75 MANS10' Dilatometry - Borchers 1942
+0.05 .725 MANS11' Optical metallography - Treadwell 1942
+0.05 .7 MANS12' Resistivity measurements - Kovacs 1966
+0.05 .675 MANS13' Optical met. / resistiv. - Drits 1968
+CLIP ON
+
+
+
+$  A.G.C. Gwyer and H. W.L. Phillips,  
+$  "Alloys of Aluminium with Silicon and Iron",  
+$  J. Inst. Met., 38, 31-35 (1927)
+$
+$  A.G.C. Gwyer, H.W.L. Phillips, and  L. Mann,
+$  "The Constitution  of the Alloys of Aluminium  
+$   with Copper, Silicon, and Iron", 
+$  J. Inst. Met., 40,  300-302 (1928).
+$
+$ X(Si) vs T_C (Al-Solvus)
+color 4
+BLOCK X=C1; Y=C2; GOC=C3,MAWS6;
+.0150   575
+.0114   548
+.0088   522
+.0035   450
+.0014   300
+BLOCKEND
+
+
+
+$  E.H. Dix and A.C. Heath,  
+$  "Equilibrium Relations in Aluminum-Silicon 
+$   and Aluminum-Iron-Silicon Alloys of High Purity", 
+$  Trans. AIME,  78,  164-194 (1928)
+$
+$ X(Si) vs T_C (Al-Solvus)
+color 4
+BLOCK X=C1; Y=C2; GOC=C3,MAWS7;
+.0136   570
+.0124   550
+.0078   500
+.0046   450
+.0029   400
+.0017   350
+BLOCKEND
+
+
+
+$  L. Losana and R.  Stratta,  
+$  "Solid Solubility  of Silicon in Aluminum  in  the  Solid State",
+$  La  Metallurgia Ital.,  193-197 (1931).
+$
+$ X(Si) vs T_C (Al-Solvus)
+color 4
+BLOCK X=C1; Y=C2; GOC=C3,MAWS8;
+.0012   220
+.0023   335
+.0059   495
+.0105   540
+.0168   576
+BLOCKEND
+
+
+
+$  A.  Durer, 
+$  "Determination of Solvus  Curves  by  Dilatometric  Measurements",
+$  Z. Metallkd.,  32,  280-281 (1940)
+$
+$ X(Si) vs T_C (Al-Solvus)
+color 4
+BLOCK X=C1; Y=C2; GOC=C3,MAWS9;
+.0008   300
+.0016   350
+.0030   400
+.0055   450
+.0087   500
+.0135   550
+.0160   577
+BLOCKEND
+
+
+
+$  V. H. Borchers and H.J. Otto, 
+$ "Dilatometric Investigation of the Solubility of Silicon in Aluminum", 
+$  Aluminium, 24, 219-221 (1942).
+$
+$ X(Si) vs T_C (Al-Solvus)
+color 4
+BLOCK X=C1; Y=C2; GOC=C3,MAWS10;
+0.0015  387
+0.0034  435
+0.0041  450
+0.0092  526
+0.0132  561
+0.0136  567 
+BLOCKEND
+
+
+
+$  W.D. Treadwell and R. Walti, 
+$  "Solubility of Silicon in Aluminum", 
+$  Helv. Chim. Acta, 25, 1154-1163 (1942).
+$
+$ X(Si) vs T_C (Al-Solvus)
+color 4
+BLOCK X=C1; Y=C2; GOC=C3,MAWS11;
+0.0021  300
+0.0028  350
+0.0037  400
+0.0050  450
+0.0077  500
+0.0115  550
+BLOCKEND
+
+
+
+$  E. Kovacs-Csetenyi,  C.R. Vassel, and I. Kovacs, 
+$  "Determination of the Solubility of Si in Dilute Al-Si Alloys 
+$   by Low-Temperature  Resistivity Measurements",
+$  Phys. Status Solidi, 17, K123-K126 (1966).
+$
+$ X(Si) vs T_C (Al-Solvus)
+color 4
+BLOCK X=C1; Y=C2; GOC=C3,MAWS12;
+0.0005  282
+0.0008  315
+0.001   327
+BLOCKEND
+
+
+
+$  M. Ye. Drits, E.S. Kadaner,  and V.I. Kuz'mina, 
+$  "Solubility of Silicon and Zirconium in Aluminium", 
+$  Izv. Akad. Nauk SSR, Met., (1), 170-175 (1968);
+$  TR: Russ. Met. (1), 102-105 (1968)
+$
+$ X(Si) vs T_C (Al-Solvus)
+color 4
+BLOCK X=C1; Y=C2; GOC=C3,MAWS13;
+0.0024  400
+0.0072  500
+0.0096  525
+0.0125  565
+BLOCKEND
+
+
+
+$
+$***********************************************************************
+DATASET 3 Experimental Al-Si Al-Solidus data
+$***********************************************************************
+$
+ATTRIBUTE CENTER
+CHARSIZE .3
+SYMBOLSIZE .3
+$
+CLIP OFF
+color 6
+0.05 .65 MANS14' Resistivity measurements - Otani 1926
+0.05 .825 MANS7' Optical metallography - Dix 1928
+0.05 .625 MANS15' Resistivity measurements - Anastasiadis 1929
+0.05 .95 MANS2' Thermal analysis - Singer 1947
+0.05 .6 MANS16' Microhardness - Glazov 1961
+CLIP ON
+
+
+$  B.  Otani,
+$  "Silicon-Aluminum and Its Structure",  
+$  J. Inst. Met., 36,  243-267 (1926)
+$
+$ X(Si) vs T_C (Al-Solidus)
+color 6
+BLOCK X=C1; Y=C2; GOC=C3,MAWS14;
+.0072   623
+.0110   608
+BLOCKEND
+
+
+
+$  E.H. Dix and A.C. Heath,  
+$  "Equilibrium Relations in Aluminum-Silicon 
+$   and Aluminum-Iron-Silicon Alloys of High Purity", 
+$  Trans. AIME,  78,  164-194 (1928)
+$
+$ X(Si) vs T_C (Al-Solidus)
+color 6
+BLOCK X=C1; Y=C2; GOC=C3,MAWS7;
+.0035   635
+.0070   622
+.0106   592
+BLOCKEND
+
+
+
+$  L.  Anastasiadis, 
+$  "Aluminum-Silicon  Solid  Solutions", 
+$  Z.  Anorg.  Chem., 179, 145-154 (1929).
+$
+$ X(Si) vs T_C (Al-Solidus)
+color 6
+BLOCK X=C1; Y=C2; GOC=C3,MAWS15;
+0.005   635
+0.0076  623
+0.0097  610
+0.0122  595
+BLOCKEND
+
+
+
+$  A. R.E. Singer and S.A. Cottrell, 
+$  "Properties of the Aluminum-Silicon Alloys 
+$  at Temperatures in the Region of the Solidus", 
+$J. Inst. Met., 73, 33-54 (1947).
+$
+$ X(Si) vs T_C (Al-Solidus)
+color 6
+BLOCK X=C1; Y=C2; GOC=C3,MAWS2;
+.00096  644
+.0019   641
+.0067   621
+.0106   604
+.0154   578
+BLOCKEND
+
+
+
+$  V. Glazov, 
+$  Izv. Akad. Nauk  SSSR, 
+$  Otd. Teckhn. Nauk, Met. Topl., (4), 39-42 (1961).
+$
+$ X(Si) vs T_C (Al-Solidus)
+color 6
+BLOCK X=C1; Y=C2; GOC=C3,MAWS16;
+.0006   652
+.0029   640
+.0074   617
+.0096   600
+.0118   590
+.0144   579
+BLOCKEND
+
+
+
+$
+$***********************************************************************
+DATASET 4 Experimental Al-Si Si-Solidus data
+$***********************************************************************
+$
+ATTRIBUTE CENTER
+CHARSIZE .3
+SYMBOLSIZE .3
+$
+CLIP OFF
+color 8
+0.05 .575 MANS17' Diffusion measurements - Miller 1956
+0.05 .55 MANS115' Temp. gradient zone melting - Navon 1957
+0.05 .525 MANS131' Temp. gradient zone melting - Lozovskii 1968
+CLIP ON
+
+
+
+$  R.C. Miller and A. Savage, 
+$  "Diffusion of Aluminum in Single Crystal Silicon",
+$  J. Appl. Phys., 27, 1430-1432 (1956).
+$
+$ X(Si) vs T_C (Si-Solidus)
+color 8
+BLOCK X=C1; Y=C2; GOC=C3,MAWS17;
+.99987  1380
+.99967  1350
+.99969  1300
+.99985  1250
+.99973  1200
+.999925 1100
+.999953 1050
+BLOCKEND
+
+
+
+$  D. Navon and V. Chernyshov, 
+$  "Retrograde Solubility of Aluminum  in Silicon", 
+$  J. Appl. Phys., 27, 1430-1432 (1957).
+$
+$ X(Si) vs T_C (Si-Solidus)
+color 8
+BLOCK X=C1; Y=C2; GOC=C3,MAWS115;
+.999829 1204
+.999837 1176
+.999873 1135
+.999882 1078
+.999941 933
+.999973 826
+.999979 752
+.999988 711
+BLOCKEND
+
+
+
+$  V.N. Lozovskii and A.I. Udyanskaya,
+$  "Solubility of Aluminum in Silicon Single Crystals", 
+$  Izv. Akad. Nauk SSSR, Neorg. Mater., 4(7), 1174-1175 (1968).
+color 8
+BLOCK X=C1; Y=C2; GOC=C3,MAWS131;
+.999774 1240
+.999806 1193
+.999760 1173
+.999824 1100
+.999884 1055
+.999894 977
+.999934 934
+.99938  915
+.999964 856
+.99988  737
+BLOCKEND

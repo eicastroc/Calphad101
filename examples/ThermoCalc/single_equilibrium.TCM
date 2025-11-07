@@ -1,0 +1,60 @@
+@@ Log file generated 2025-10-22
+ @@ Aluminum silicon binary system
+
+set_echo
+ 
+@@**********************************************************************
+@@ Get thermodynamic data
+@@**********************************************************************
+go database
+switch
+USER
+define-system
+Al Si
+get
+
+
+
+@@**********************************************************************
+@@ poly_3 is the module for thermodynamic equilibrium calculations
+@@**********************************************************************
+goto_module poly_3
+ 
+ 
+
+@@**********************************************************************
+@@ calculation of single equilibrium
+@@**********************************************************************
+
+enter-symbol
+function
+cp
+H.T;
+
+
+
+@@*********************************************************
+@@ set initial conditions and calculate initial equilibrium
+set_condition t=500 
+set_condition p=1e5
+set_condition n=1.0
+set_condition x(si) = 0.1
+ 
+list-conditions
+
+
+compute-equilibrium
+list-equilibrium
+SCREEN
+vxns
+
+show h
+show cp
+
+
+
+
+
+set_interactive
+
+exit

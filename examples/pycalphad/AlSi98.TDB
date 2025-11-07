@@ -1,0 +1,105 @@
+$ ALSI
+$
+$ ---------------------------------------------------------------------------
+$ ---------------------------------------------------------------------------
+$
+$  'COST (1998): COST 507 -- Definition of Thermochemical and 
+$    Thermophysical Properties to Provide a Database for the Development 
+$    of New Light Alloys. European Cooperation in the Field of 
+$    Scientific and Technical Research, European Commission. Vol 1. 
+$    Proceedings of the Final Workshop of COST 507, Vaals, the 
+$    Netherlands, 1997; Vol 2. 
+$
+$ ---------------------------------------------------------------------------
+$
+ ELEMENT /-   ELECTRON_GAS              0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT VA   VACUUM                    0.0000E+00  0.0000E+00  0.0000E+00!
+ ELEMENT AL   FCC_A1                    2.6982E+01  4.5773E+03  2.8322E+01!
+ ELEMENT SI   DIAMOND_A4                2.8085E+01  3.2175E+03  1.8820E+01!
+
+ TYPE_DEFINITION % SEQ *!
+ DEFINE_SYSTEM_DEFAULT ELEMENT 2 !
+ DEFAULT_COMMAND DEF_SYS_ELEMENT VA /- !
+
+
+
+
+
+
+
+$============================================================================
+$ AL  (Stable Structure = FCC_A1)
+$ ---------------------------------------------------------------------------
+
+ FUNCTION GHSERAL   298.15 -7976.15+137.093038*T-24.3671976*T*LN(T)
+     -.001884662*T**2-8.77664E-07*T**3+74092*T**(-1); 700 Y
+      -11276.24+223.048446*T-38.5844296*T*LN(T)+.018531982*T**2
+     -5.764227E-06*T**3+74092*T**(-1); 933.47 Y
+      -11278.361+188.684136*T-31.748192*T*LN(T)-1.230622E+28*T**(-9); 2900 N
+     !
+
+ FUNCTION GLIQAL    298.15 +GHSERAL#+11005.045-11.84185*T+7.9337E-20*T**7;
+     933.47 Y
+      -795.991+177.430209*T-31.748192*T*LN(T); 2900 N !
+
+
+$=============================================================================
+$ Si   (Stable Structure = DIAMOND_A4)
+$ ----------------------------------------------------------------------------
+
+
+ FUNCTION GHSERSI   298.15 -8162.609+137.236859*T-22.8317533*T*LN(T)
+     -.001912904*T**2-3.552E-09*T**3+176667*T**(-1); 1687 Y
+      -9457.642+167.281367*T-27.196*T*LN(T)-4.20369E+30*T**(-9); 3600 N !
+
+ FUNCTION GFCCSI    298.15 +GHSERSI#+51000-21.8*T; 3600 N !
+
+ FUNCTION GLIQSI    298.15 +GHSERSI#+50696.36-30.099439*T+2.09307E-21*T**7;
+     1687 Y
+      +40370.523+137.722298*T-27.196*T*LN(T); 3600 N !
+
+
+
+
+ PHASE LIQUID:L %  1  1.0  !
+ CONSTITUENT LIQUID:L :AL,SI :  !
+   PARAMETER G(LIQUID,AL;0)    298.15 +GLIQAL#;                2900.00 N REF1!
+   PARAMETER G(LIQUID,SI;0)    298.15 +GLIQSI#;                3600.00 N REF1!
+   PARAMETER L(LIQUID,AL,SI;0) 298.15 -11340.1-1.23394*T;      6000.00 N REF2!
+   PARAMETER L(LIQUID,AL,SI;1) 298.15 -3530.93+1.35993*T;      6000.00 N REF2!
+   PARAMETER L(LIQUID,AL,SI;2) 298.15 +2265.39;                6000.00 N REF2!
+
+
+ PHASE DIAMOND_A4 %   1   1 !
+ CONSTITUENT DIAMOND_A4 : AL,SI% : !
+   PARAMETER G(DIAMOND_A4,AL;0)    298.15  +30*T+GHSERAL#;     2900.00 N REF2!
+   PARAMETER G(DIAMOND_A4,SI;0)    298.15  +GHSERSI#;          3600.00 N REF1!
+   PARAMETER L(DIAMOND_A4,AL,SI;0) 298.15  
+     +113246.16-47.55509*T;                                    6000.00 N REF2!
+$
+$
+ TYPE_DEFINITION ( GES AMEND_PHASE_DESCRIPTION FCC_A1 MAGNETIC -3  0.28 !
+ PHASE FCC_A1 %( 1  1  !
+ CONSTITUENT FCC_A1 : AL :!
+   PARAMETER G(FCC_A1,AL;0)    298.15  +GHSERAL#;              2900.00 N REF1!
+   PARAMETER G(FCC_A1,SI;0)    298.15  +GFCCSI#;               3600.00 N REF1!
+   PARAMETER L(FCC_A1,AL,SI;0) 298.15  -3143.78+0.39297*T;     6000.00 N REF2!
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$ LIST OF REFERENCES:  
+$ ---------------------------------------------------------------------------
+
+ LIST_OF_REFERENCE 
+ NUMBER SOURCE
+  REF1 'PURE1 - SGTE Pure Elements (Unary) Database (Version 1.0),
+           developed by SGTE (Scientific Group Thermodata Europe), 1991-1992,
+            and provided by TCSAB (Jan. 1991). Also in: Dinsdale A. (1991):
+           SGTE data for pure elements, Calphad, 15, 317-425.'
+  REF2 'COST 507 -- Definition of Thermochemical and 
+    Thermophysical Properties to Provide a Database for the Development 
+    of New Light Alloys. European Cooperation in the Field of 
+    Scientific and Technical Research, European Commission. Vol 1. 
+    Proceedings of the Final Workshop of COST 507, Vaals, the 
+    Netherlands, 1997; Vol 2'
+ !

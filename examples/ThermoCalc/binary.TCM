@@ -1,0 +1,114 @@
+@@ Log file generated 2025-10-22
+ @@ Aluminum silicon binary system
+
+set_echo
+ 
+@@**********************************************************************
+@@ Get thermodynamic data
+@@**********************************************************************
+go database
+switch
+USER
+define-system
+Al Si
+get
+
+
+
+@@**********************************************************************
+@@ poly_3 is the module for thermodynamic equilibrium calculations
+@@**********************************************************************
+goto_module poly_3
+ 
+ 
+
+@@**********************************************************************
+@@ calculation of binary phase diagram
+@@**********************************************************************
+
+
+
+@@*********************************************************
+@@ set initial conditions and calculate initial equilibrium
+
+set_condition t=1000
+set_condition p=1e5
+set_condition n=1.0
+set_condition x(si)=0.1
+ 
+list-conditions
+ 
+compute-equilibrium
+
+list-equilibrium
+SCREEN
+vwns
+
+
+
+@@***********************************************
+@@ mapping calculation (to get the phase diagram) 
+
+set_axis_variable
+1
+x(si)
+0
+1
+0.025
+ 
+set-axis-variable
+2
+t
+600
+1800
+30
+
+map
+
+
+
+@@*******************************************************
+@@ post-processing operations (graphing)
+post
+
+
+
+@@********************
+@@ binary diagram 
+
+select_plot 1
+
+set_diagram_axis 
+x
+mole_fraction
+si
+
+set_diagram_axis
+y
+t_c
+
+
+set-scaling-status
+x
+n
+0
+1
+
+set-scaling-status
+y
+n
+300
+1500
+
+set-tieline-status 0
+
+set-label f
+
+plot
+ 
+
+
+
+set_interactive
+
+exit

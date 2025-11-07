@@ -1,0 +1,101 @@
+$
+$ Activity data in Al-Si liquid
+$
+ PROLOG 1
+ XSCALE 0 1
+ YSCALE 0 1
+ XSCALE LINEAR
+ YSCALE LINEAR
+ XLENGTH 11.5
+ YLENGTH 11.5
+ TITLE
+ XTEXT x(Si)
+ YTEXT Thermodynamic activity
+
+
+$
+$**********************************************
+DATASET 1 Thermodynamic activities Al-Si liquid
+$**********************************************
+$
+ATTRIBUTE CENTER
+CHARSIZE .3
+SYMBOLSIZE .3
+$
+CLIP OFF
+color 1
+0.05 .55 MANS1' aAl - Mitani 1967
+0.05 .5 MANS2' aAl - Chatillon 1975
+color 2
+0.05 .45 MANS3' aSi - Chatillon 1975
+CLIP ON
+
+$  H. Mitani and H. Nagai, 
+$  "Determination of Equi Constant of  2Al(1) + Al(g)Cl3(g) = 3AICl(g) 
+$   Reaction and Activities of Al and Si in AI-Si Binary Alloys", 
+$  J. Jpn. Inst. Met., 31, 1296-1300 (1967).
+$
+$ X(Si) vs a_Al
+color 1
+BLOCK X=C2; Y=C3; GOC=C4,MAWS1;
+1200    0.74    0.275
+1200    0.7     0.25
+1200    0.525   0.350
+1200    0.483   0.443
+1200    0.373   0.512
+1200    0.293   0.644
+1200    0.180   0.775
+1200    0.115   0.838
+BLOCKEND
+
+
+
+$  C.  Chatillon, M.  Allibert, and  A.  Pattoret,  
+$  "Thermodynamic Study by Mass Spectrometry of A1-Si Alloys 
+$   from 1000 to  1700 K", 
+$  High  Temp.-High  Pressures,  7,  583-594 (1975).
+$
+$ X(Si) vs a_Al
+color 1
+BLOCK X=C2; Y=C3; GOC=C4,MAWS2;
+1200    .65     0.232
+1200    .60     0.219
+1200    .50     0.414
+1200    .399    0.506
+1200    .303    0.595
+1200    .20     0.759
+1200    .099    0.876
+1300    .79     0.133
+1300    .70     0.212
+1300    .60     0.315
+1300    .50     0.427
+1300    .399    0.503
+1300    .303    0.595
+1300    .20     0.795
+1300    .099    0.876
+1427    .969    0.024
+1427    .941    0.040
+1427    .902    0.089
+1427    .50     0.430
+BLOCKEND
+$
+$ X(Si) vs a_Si
+color 2
+BLOCK X=C2; Y=C3; GOC=C4,MAWS3;
+1200    .65     0.597
+1200    .60     0.513
+1200    .50     0.356
+1200    .399    0.196
+1200    .303    0.104
+1200    .20     0.078
+1200    .099    0.033
+1300    .79     0.004
+1300    .70     0.080
+1300    .399    0.360
+1300    .303    0.508
+1300    .20     0.637
+1427    .969    0.982
+1427    .941    0.412
+1427    .902    0.914
+1427    .50     0.973
+BLOCKEND

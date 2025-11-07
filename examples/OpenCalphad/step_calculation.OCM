@@ -1,0 +1,102 @@
+new YES
+
+@$**********************************************************************
+@$ Get thermodynamic data
+@$**********************************************************************
+read TDB ./AlSi98
+Al Si
+
+
+enter symbol
+cp
+H.T;
+
+
+@$**********************************************************************
+@$ calculation of property diagram
+@$**********************************************************************
+
+@$*********************************************************
+@$ set initial conditions and calculate initial equilibrium
+
+set condition t=1000
+set condition p=1e5
+set condition n=1.0
+set condition x(si)=0.1
+
+list conditions
+
+calculate equilibrium
+
+list results
+1
+
+
+@$*******************************************************
+@$ stepping calculation (to get equilbrium at multiple T) 
+
+set axis
+1
+t
+600
+1800
+30
+
+step
+NORMAL 
+
+@$*********************************************************
+@$ step is fragile (new equilibrium and new stepping made)
+set condition t=600
+
+list conditions
+
+calculate equilibrium
+
+list results
+1
+
+step
+NORMAL
+
+
+@$*******************************************************
+@$ post-processing operations (graphing)
+
+
+@$************************************
+@$ phase partition plot
+plot
+T
+NP(*)
+*
+RENDER
+
+
+
+@$************************************
+@$ Cp plot
+plot
+T
+Cp
+RENDER
+
+
+
+@$************************************
+@$ Enthalpy plot
+plot
+T
+H
+RENDER
+
+
+@$************************************
+@$ GMR plot
+plot
+T
+GM(*)
+RENDER
+
+
+set inter

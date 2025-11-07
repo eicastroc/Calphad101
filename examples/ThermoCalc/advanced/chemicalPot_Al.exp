@@ -1,0 +1,105 @@
+$
+$ Activity data in Al-Si liquid
+$
+ PROLOG 1
+ XSCALE 0 1
+ YSCALE -10000 0
+ XSCALE LINEAR
+ YSCALE LINEAR
+ XLENGTH 11.5
+ YLENGTH 11.5
+ TITLE
+ XTEXT x(Si)
+ YTEXT Thermodynamic activity
+
+
+$
+$**********************************************
+DATASET 1 Thermodynamic activities Al-Si liquid
+$**********************************************
+$
+ATTRIBUTE CENTER
+CHARSIZE .3
+SYMBOLSIZE .3
+$
+CLIP OFF
+color 1
+0.05 .55 MANS1' Berthon 1969
+color 2
+0.05 .5 MANS2' Batalin 1971
+color 1
+0.05 .45 MANS3' Schaefer 1979
+CLIP ON
+
+
+
+$  O. Berthon, G. Petot-Ervas, C. Petot, and P. Desre, 
+$  "Thermodynamics of AI-Si Alloys Containing from 2 to 35 at.% Si", 
+$  C. R. Acad. Sei. Paris, 268, C1939-C1942 (1969).
+$
+$ X(Si) vs mu(Al)
+color 1
+BLOCK X=C2; Y=C3; GOC=C4,MAWS1;
+980     .02     -289
+980     .048    -593
+980     .068    -1102
+980     .116    -1784
+980     .145    -2277
+980     .164    -2827
+980     .193    -3514
+980     .213    -3777
+980     .242    -4430
+980     .262    -4644
+980     .291    -6417
+980     .351    -7955
+BLOCKEND
+
+
+
+$  G.I. Batalin, E.A. Belaborodova, and V.A. Stukalo, 
+$  "An Investigation of the Thermodynamic Properties of AI-Si Melts", 
+$  Izv. Akad. Nauk SSSR, Met., (2), 69-74 (1971); 
+$  TR: Russ. Met. (2), 44-48 (1971)
+$
+$ X(Si) vs mu(Al)
+color 2
+BLOCK X=C2; Y=C3; GOC=C4,MAWS2;
+1423    0.10    -2469
+1423    0.20    -4310
+1423    0.30    -5020
+1423    0.40    -5732
+1423    0.50    -6318
+1423    0.60    -6653
+1423    0.70    -7615
+1423    0.80    -9121
+1423    0.90    -9721
+BLOCKEND
+
+
+
+$  S. C. Schaefer and N. A. Gokcen, 
+$  "Thermodynamic Properties  of A1-Ni and  AI-Si Systems", 
+$  High  Temp. Sci.,  11,  31-39 (1979).
+$
+$ X(Si) vs mu(Al)
+color 1
+BLOCK X=C2; Y=C3; GOC=C4,MAWS3;
+827     0.009       -241 
+827     0.029       -373
+827     0.037       -647
+827     0.064       -822
+827     0.074       -1221
+827     0.116       -1508
+827     0.127       -1682
+827     0.166       -1871
+827     0.187       -2803
+827     0.214       -3017
+827     0.268       -4095
+827     0.616       -4431
+BLOCKEND
+
+
+
+
+
+

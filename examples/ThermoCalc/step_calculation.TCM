@@ -1,0 +1,140 @@
+@@ Log file generated 2025-10-22
+ @@ Aluminum silicon binary system
+
+set_echo
+ 
+@@**********************************************************************
+@@ Get thermodynamic data
+@@**********************************************************************
+go database
+switch
+USER
+define-system
+Al Si
+get
+
+
+
+@@**********************************************************************
+@@ poly_3 is the module for thermodynamic equilibrium calculations
+@@**********************************************************************
+goto_module poly_3
+ 
+ 
+
+@@**********************************************************************
+@@ calculation of unary phase data
+@@**********************************************************************
+
+enter-symbol
+function
+cp
+H.T
+
+
+
+@@*********************************************************
+@@ set initial conditions and calculate initial equilibrium
+
+set_condition t=1000
+set_condition p=1e5
+set_condition n=1.0
+set_condition x(si) = 0.1
+ 
+
+list-conditions
+ 
+compute-equilibrium
+
+list-equilibrium
+SCREEN
+vwns
+
+
+
+@@*******************************************************
+@@ stepping calculation (to get equilbrium at multiple T) 
+
+ 
+set-axis-variable
+1
+t
+600
+1800
+30
+
+step
+NORMAL
+
+
+
+@@*******************************************************
+@@ post-processing operations (graphing)
+post
+
+
+@@************************
+@@ phase partition plot
+
+select_plot 1
+
+set_diagram_axis x T
+set_diagram_axis y np(*)
+*
+
+set-scaling-status x n 0 1
+set-scaling-status y n -0.01 1.01
+
+set-label f
+
+plot
+
+
+@@************************
+@@ Cp plot
+
+select_plot 2
+
+set_diagram_axis x T
+set_diagram_axis y cp
+
+set-scaling-status x n 0 1
+set-scaling-status y n 0 160
+
+plot
+
+
+
+@@************************
+@@ H plot
+
+select_plot 3
+
+set_diagram_axis x T
+set_diagram_axis y H
+
+set-scaling-status x n 0 1
+set-scaling-status y n 0 60000
+
+plot
+
+@@************************
+@@ GMR plot
+
+select_plot 4
+
+set_diagram_axis x T
+set_diagram_axis y GM(*)
+*
+
+set-scaling-status x n 0 1
+set-scaling-status y n -120000 0
+
+set-label f
+
+plot
+
+
+set_interactive
+
+exit

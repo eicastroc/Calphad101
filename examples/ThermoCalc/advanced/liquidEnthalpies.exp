@@ -1,0 +1,101 @@
+$
+$ Mixing enthalpy in Al-Si liquid
+$
+ PROLOG 1
+ XSCALE 0 1
+ YSCALE -6000 0
+ XSCALE LINEAR
+ YSCALE LINEAR
+ XLENGTH 11.5
+ YLENGTH 11.5
+ TITLE
+ XTEXT x(Si)
+ YTEXT Mixing enthalpy (J.mol-1)
+
+
+$
+$*******************************************
+DATASET 1 Mixing enthalpy in Al-Si liquid
+$*******************************************
+$
+ATTRIBUTE CENTER
+CHARSIZE .3
+SYMBOLSIZE .3
+$
+CLIP OFF
+color 1
+0.05 .15 MANS1' Calorimetry - Korber 1937
+color 1
+0.05 .10 MANS2' Calorimetry - Bros 1981
+color 1
+0.05 .05 MANS3' Calorimetry - Batalin 1981
+
+CLIP ON
+
+$  F. Korber, W. Oelsen and H. Lichlenberg, 
+$  "Heat of Mixing of Aluminum  in  Silicon  Melts", 
+$  Mitt.  KWI Eisenforschung Dusseldorf,  19, 156-157  (1937)
+$ 
+color 1
+BLOCK X=C2; Y=C3; GOC=C4,MAWS1;
+SI   .19   -1630
+SI   .387  -3560
+SI   .588  -3310
+SI   .792  -2260
+BLOCKEND
+
+$  J. P. Bros, H. Eslami, and P. Gaune,  
+$  "Thermodynamics of A1-Si and A1-Ge-Si Liquid Alloys", 
+$  Ber. Bunsenges.,  85, 333-336 (1981). 
+color 1
+BLOCK X=C2; Y=C3; GOC=C4,MAWS2;
+SI  .068    -971
+SI  .1      -1117
+SI  .135    -1498
+SI  .172    -1803
+SI  .188    -2076
+SI  .237    -2356
+SI  .237    -2398
+SI  .28     -2762
+SI  .29     -2729
+SI  .324    -2917
+SI  .336    -2804
+SI  .363    -2959
+SI  .381    -2942
+SI  .401    -2930
+SI  .424    -2879
+SI  .439    -2837
+SI  .46     -2628
+SI  .465    -2645
+SI  .512    -2515
+BLOCKEND
+
+$  G.I. Batalin, E.A. Beloborodova, A.N. Shlapak, I.V.
+$  Nikolaenko, and V.P. Kurach, 
+$  "Heat of Formation of Liquid Aluminiurn-Silicon Alloys", 
+$  Zh. Fiz. Khim., 55(6), 1580-1582 (1981); 
+$  TR: Russ. J. Phys. Chem., 55(6), 888-890 (1981).
+color 1
+BLOCK X=C2; Y=C3; GOC=C4,MAWS3;
+SI  .073    -1100
+SI  .103    -980
+SI  .134    -1590
+SI  .17     -1980
+SI  .196    -2380
+SI  .233    -2880
+SI  .279    -3680
+SI  .29     -3780
+SI  .465    -5760
+SI  .511    -5330
+SI  .535    -3880
+SI  .55     -4290
+SI  .57     -3770
+SI  .606    -3550
+SI  .641    -3530
+SI  .651    -2910
+SI  .676    -2700
+SI  .716    -1860
+SI  .742    -2260
+SI  .787    -1220
+SI  .818    -1480
+BLOCKEND
